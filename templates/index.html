@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tweet Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Tweet Classification App</h1>
+    </header>
+    <div class="container">
+        <form action="/classify" method="post">
+            <textarea name="text" rows="4" cols="50" placeholder="Enter tweet here..."></textarea><br>
+            <input type="submit" value="Classify">
+        </form>
+        {% if prediction %}
+            <div class="result {{ 'positive' if prediction == 'Positive' else 'negative' }}">
+                <p>Prediction: {{ prediction }}</p>
+                <p>Tweet: {{ text }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <footer>
+        <p>&copy; 2023 Tweet Classification App</p>
+    </footer>
+</body>
+</html>

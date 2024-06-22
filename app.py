@@ -1,8 +1,12 @@
-import streamlit as st
+from flask import Flask, request, render_template
 import joblib
 import torch
 import re
 from transformers import BertTokenizer, BertModel
+import numpy as np 
+import pandas as pd
+
+app = Flask(__name__)
 
 # Charger le modèle SVM
 svm_model = joblib.load('svm_model.pkl')
@@ -37,13 +41,19 @@ def extract_features(texts, batch_size=16):
         all_embeddings.append(embeddings)
     return np.concatenate(all_embeddings, axis=0)
 
-# Interface utilisateur avec Streamlit
-st.title("Text Classification with BERT and SVM")
+@app.route('/')
+def home():
+    return render_template('index.html')
 
-text_input = st.text_area("Enter text for classification:")
+@app.route('/classify', methods=['POST'])
+def classify_text():
+    if request.method == 'POST':
+        text = request.form['text']
+        cleaned_text = clean_text(text)
+        features = extract_features([cleaned_text])
+        prediction = svm_model.predict(features)[0]
+        result = 'Positive' if prediction == 0 else 'Negative'
+        return render_template('index.html', prediction=result, text=text)
 
-if st.button("Classify"):
-    cleaned_text = clean_text(text_input)
-    features = extract_features([cleaned_text])
-    prediction = svm_model.predict(features)
-    st.write(f"Prediction: {prediction[0]}")
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)

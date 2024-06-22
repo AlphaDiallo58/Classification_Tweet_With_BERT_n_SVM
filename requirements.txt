@@ -1,6 +1,6 @@
-streamlit
-torch
-transformers
-joblib
+Flask==2.0.2
+torch==1.10.0
+transformers==4.12.3
+joblib==1.1.0
 pandas
 numpy
