@@ -16,14 +16,15 @@
             <input type="submit" value="Classify">
         </form>
         {% if prediction %}
-            <div class="result {{ 'positive' if prediction == 'Positive' else 'negative' }}">
+            <div class="result {{ 'negative' if prediction == 'Natural Disaster!' else 'positive' }}">
                 <p>Prediction: {{ prediction }}</p>
+                <p>Probability: {{ probability }}</p>  
                 <p>Tweet: {{ text }}</p>
             </div>
         {% endif %}
     </div>
     <footer>
-        <p>&copy; 2023 Tweet Classification App</p>
+        <p>&copy; 2024 Tweet Classification App</p>
     </footer>
 </body>
 </html>

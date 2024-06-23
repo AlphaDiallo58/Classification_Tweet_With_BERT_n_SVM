@@ -40,6 +40,7 @@ input[type="submit"] {
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 input[type="submit"]:hover {
@@ -47,12 +48,13 @@ input[type="submit"]:hover {
 }
 
 .result {
-    margin-top: 2em;
+    margin-top: 20px;
     padding: 1em;
     width: 100%;
     max-width: 600px;
     text-align: center;
     font-size: 1.2em;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .result.positive {
