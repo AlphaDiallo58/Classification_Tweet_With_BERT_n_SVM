@@ -1,9 +1,3 @@
-Cette application Flask utilise un modèle SVM que j'ai entrainé pour classer les tweets en deux catégories : "Natural Disaster" (catastrophes naturelles) 
-et "Non Natural Disaster" (non catastrophes naturelles). 
-L'application affiche la prédiction ainsi que la probabilité que cette prédiction soit correcte,
+Cette application Flask utilise un modèle SVM que j'ai entraîné pour classer les tweets en deux catégories : "Natural Disaster" (catastrophes naturelles) et "Non Natural Disaster" (non catastrophes naturelles). Les données ont été vectorisées grâce à un fine-tuning du modèle BERT, l'idée étant de combiner deep learning et machine learning classique. L'application affiche la prédiction ainsi que la probabilité que cette prédiction soit correcte. 
 
-
-Si vous souhaitez ré-entraîner ou ajuster le modèle SVM utilisé pour la classification des tweets.
-Le dossier model creation contient tous les scripts nécessaires pour le prétraitement des données, l'extraction des caractéristiques,
-l'entraînement et le test du modèle.
-Vous pouvez suivre ces étapes pour effectuer un ré-entraînement
+Si vous souhaitez réentraîner ou ajuster le modèle SVM utilisé pour la classification des tweets, le dossier "Model Creation" contient tous les scripts nécessaires pour le prétraitement des données, l'extraction des caractéristiques, l'entraînement et le test du modèle. Vous pouvez suivre ces étapes pour effectuer un réentraînement ou affiner les performances selon vos besoins
