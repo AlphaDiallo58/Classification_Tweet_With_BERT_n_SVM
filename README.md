@@ -1,9 +1,50 @@
-Cette application Flask utilise un modèle SVM que j'ai entrainé pour classer les tweets en deux catégories : "Natural Disaster" (catastrophes naturelles) 
-et "Non Natural Disaster" (non catastrophes naturelles). 
-L'application affiche la prédiction ainsi que la probabilité que cette prédiction soit correcte,
+Classification of Tweets Using BERT and SVM
 
+Overview
 
-Si vous souhaitez ré-entraîner ou ajuster le modèle SVM utilisé pour la classification des tweets.
-Le dossier model creation contient tous les scripts nécessaires pour le prétraitement des données, l'extraction des caractéristiques,
-l'entraînement et le test du modèle.
-Vous pouvez suivre ces étapes pour effectuer un ré-entraînement
+This project focuses on classifying tweets using a combination of BERT (Bidirectional Encoder Representations from Transformers) and SVM (Support Vector Machine). The goal is to leverage BERT's deep contextual understanding of text and SVM's classification capabilities to achieve high accuracy.
+
+Features
+
+Data preprocessing and cleaning of tweets
+
+Fine-tuning BERT for feature extraction
+
+Training an SVM classifier on BERT-generated embeddings
+
+Installation
+
+To set up the project, follow these steps:
+
+Clone the repository:
+
+git clone https://github.com/AlphaDiallo58/Classification_Tweet_With_BERT_n_SVM.git
+cd Classification_Tweet_With_BERT_n_SVM
+
+Create a virtual environment (optional but recommended):
+
+python -m venv env
+source env/bin/activate  # On Windows use `env\Scripts\activate`
+
+Install the required dependencies:
+
+pip install -r requirements.txt
+
+Usage
+
+Run the main script to preprocess data, extract features using BERT, and classify tweets using SVM:
+
+python main.py
+
+Alternatively, if using Jupyter Notebook, open and execute notebooks/classification_pipeline.ipynb.
+
+You can directly test the trained model svm_model.pkl and improve it based on your own dataset and requirements.
+
+Contributions
+
+Contributions are welcome! If you have improvements or suggestions, feel free to submit a pull request.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
