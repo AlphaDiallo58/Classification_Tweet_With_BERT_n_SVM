@@ -39,8 +39,6 @@ Run the main script to preprocess data, extract features using BERT, and classif
 python main.py
 ```
 
-Alternatively, if using Jupyter Notebook, open and execute `notebooks/classification_pipeline.ipynb`.
-
 You can directly test the trained model `svm_model.pkl` and improve it based on your own dataset and requirements.
 
 ## Contributions
